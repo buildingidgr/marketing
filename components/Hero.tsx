@@ -25,7 +25,7 @@ const Hero = () => {
               Ανεβάστε το έργο σας στο MechLabs και θα βρούμε τον κατάλληλο μηχανικό για εσάς.
             </p>
             <Button size="lg" className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-primary/90" asChild>
-              <Link href="/project/new">Ξεκινήστε το έργο σας</Link>
+              <Link href="https://wizard-production-d5f4.up.railway.app/">Ξεκινήστε το έργο σας</Link>
             </Button>
           </div>
         </div>
@@ -53,7 +53,7 @@ const Hero = () => {
             </p>
             <div className="flex gap-4">
               <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-primary/90" asChild>
-                <Link href="/project/new">Ξεκινήστε το έργο σας</Link>
+                <Link href="https://wizard-production-d5f4.up.railway.app/">Ξεκινήστε το έργο σας</Link>
               </Button>
             </div>
           </div>
