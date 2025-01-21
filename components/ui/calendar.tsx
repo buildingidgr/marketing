@@ -3,6 +3,7 @@
 import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { DayPicker } from "react-day-picker"
+import { Button } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
@@ -15,6 +16,18 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  const CalendarPrevious = ({
+    ...buttonProps
+  }: React.ComponentProps<typeof Button>) => (
+    <Button {...buttonProps}>Previous</Button>
+  )
+
+  const CalendarNext = ({
+    ...buttonProps
+  }: React.ComponentProps<typeof Button>) => (
+    <Button {...buttonProps}>Next</Button>
+  )
+
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}

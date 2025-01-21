@@ -1,27 +1,20 @@
 import { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Πολιτική Απορρήτου | MechLabs",
   description: "Πολιτική Απορρήτου και όροι χρήσης της πλατφόρμας MechLabs",
 };
 
-export default function TermsPage() {
+export default function Terms() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8">
-          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900">
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Επιστροφή
-          </Link>
-        </div>
-
-        <h1 className="text-4xl font-bold mb-8">Πολιτική Απορρήτου</h1>
-        
-        <div className="bg-white rounded-lg shadow-sm p-8">
+    <div>
+      <Navbar />
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Όροι Χρήσης</h1>
+        <div className="prose max-w-none">
+          <p>Οι παρόντες όροι χρήσης (&ldquo;Όροι&rdquo;) διέπουν τη χρήση της πλατφόρμας MechLabs.</p>
           <section className="space-y-8">
             <div>
               <h2 className="text-2xl font-semibold mb-4">1. Συλλογή και Επεξεργασία Δεδομένων</h2>
@@ -90,6 +83,6 @@ export default function TermsPage() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 } 
