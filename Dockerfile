@@ -1,13 +1,18 @@
-FROM node:18-alpine AS base
+FROM node:18-slim AS base
 
 # Install dependencies only when needed
 FROM base AS deps
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json package-lock.json* .npmrc ./
-RUN npm install --legacy-peer-deps
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    python3 \
+    && npm install --legacy-peer-deps \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -29,8 +34,8 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN groupadd --system --gid 1001 nodejs
+RUN useradd --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
 
