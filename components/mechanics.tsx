@@ -11,7 +11,6 @@ import {
   Shield, 
   CableCar, 
   Droplet,
-
 } from "lucide-react";
 
 type Service = {
@@ -34,7 +33,7 @@ const projectTypes = [
           },
           {
             title: "Συστήματα Κλιματισμού",
-            description: "Μελέτες θέρμανσης-ψύξ��ς και εξαερισμού.",
+            description: "Μελέτες θέρμανσης-ψύξης και εξαερισμού.",
             icon: <Wind className="h-5 w-5 text-blue-500 mb-2" />
           },
           {
@@ -61,11 +60,6 @@ const projectTypes = [
       }
 ];
 
-
-
-
-
-
 export default function Mechanics() {
   return (
     <section className="py-24">
@@ -73,10 +67,10 @@ export default function Mechanics() {
         <div className="flex flex-col md:flex-row items-center md:items-end gap-8">
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="text-4xl md:text-5xl font-bold mb-2 tracking-tighter">
-            Μηχανολόγοι Μηχανικοί
+              Μηχανολόγοι Μηχανικοί
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground tracking-tighter font-semibold">
-            Εξειδικευμένοι επαγγελματίες για:
+              Εξειδικευμένοι επαγγελματίες για:
             </p>
             <Button className="text-lg font-semibold text-blue-500 tracking-tighter pl-0 flex items-center gap-2 mx-auto md:mx-0" variant="link">
               <Link href="/project/new" className="flex items-center gap-2">

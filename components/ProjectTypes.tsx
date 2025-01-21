@@ -1,74 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { 
-  Wrench, 
-  Wind, 
-  Zap, 
-  Shield, 
-  CableCar, 
-  Droplet,
-  Cable,
-  Home,
-  Bell,
-  Sun,
-  Camera,
-  Network,
-  Ruler,
-  Palette,
-  Lightbulb,
-  Trees,
-  Leaf
-} from "lucide-react";
-
-type Service = {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-}
-
-const projectTypes = [
-  {
-    icon: "/civil-engineering.png",
-    title: "Πολιτικοί Μηχανικοί",
-    description: "Συνεργαστείτε με έμπειρους πολιτικούς μηχανικούς για:",
-    services: [
-      {
-        title: "Στατικές Μελέτες",
-        description: "Επαγγελματική εμπειρία στον σχεδιασμό και την ανάλυση κατασκευών.",
-        icon: <Wrench className="h-5 w-5 text-muted-foreground mb-2" />
-      },
-      {
-        title: "Νομιμοποιήσεις",
-        description: "Διαχείριση τακτοποίησεων αυθαιρέτων και έκδοση ταυτότητας κτηρίου.",
-        icon: <Home className="h-5 w-5 text-muted-foreground mb-2" />
-      },
-      {
-        title: "Ενεργειακή Πιστοποίηση",
-        description: "Έκδοση ενεργειακών πιστοποιητικών και προτάσεις βελτίωσης.",
-        icon: <Zap className="h-5 w-5 text-muted-foreground mb-2" />
-      },
-      {
-        title: "Άδειες & Επιβλέψες",
-        description: "Διαχείριση αδειών δόμησης και επίβλεψη κατασκευαστικών έργων.",
-        icon: <Shield className="h-5 w-5 text-muted-foreground mb-2" />
-      },
-      {
-        title: "Ανακαινίσεις",
-        description: "Μελέτη και επίβλεψη ανακαινίσεων κατοικιών και επαγγελματικών χώρων.",
-        icon: <CableCar className="h-5 w-5 text-muted-foreground mb-2" />
-      },
-      {
-        title: "Τεχνικός Έλεγχος",
-        description: "Επιθεώρηση κτιρίων και τεχνικοί έλεγχοι ακινήτων.",
-        icon: <Camera className="h-5 w-5 text-muted-foreground mb-2" />
-      }
-    ]
-  }
-];
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function ProjectTypes() {
   return (
@@ -102,33 +37,7 @@ export default function ProjectTypes() {
             </div>
           </div>
         </div>
-
-        <div className="grid gap-8">
-          {projectTypes.map((type, index) => (
-            <div key={index} className=" rounded-2xl p-0">
-              <div className="flex flex-col md:flex-row gap-8"> 
-                <div className="">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    {type.services.map((service, idx) => (
-                      <div key={idx} className="p-12 rounded-xl bg-slate-50">
-                        {service.icon}
-                        <h4 className="text-lg font-semibold mb-1">{service.title}</h4>
-                        <p className="text-muted-foreground font-semibold tracking-tight">
-                          {service.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-
-
-
-      
     </section>
   );
 } 
