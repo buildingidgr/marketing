@@ -13,51 +13,57 @@ import {
   Droplet,
 } from "lucide-react";
 
-type Service = {
+interface ServiceItem {
   title: string;
   description: string;
   icon: React.ReactNode;
 }
 
-const projectTypes = [
-  
-    {
-        icon: "/mechanical.png",
-        title: "Μηχανολόγοι Μηχανικοί",
-        description: "Εξειδικευμένοι επαγγελματίες για:",
-        services: [
-          {
-            title: "Μηχανολογικές Εγκαταστάσεις",
-            description: "Σχεδιασμός και μελέτες Η/Μ εγκαταστάσεων.",
-            icon: <Wrench className="h-5 w-5 text-blue-500 mb-2" />
-          },
-          {
-            title: "Συστήματα Κλιματισμού",
-            description: "Μελέτες θέρμανσης-ψύξης και εξαερισμού.",
-            icon: <Wind className="h-5 w-5 text-blue-500 mb-2" />
-          },
-          {
-            title: "Ενεργειακή Αναβάθμιση",
-            description: "Φωτοβολταϊκά συστήματα και εγκαταστάσεις φυσικού αρίου.",
-            icon: <Zap className="h-5 w-5 text-blue-500 mb-2" />
-          },
-          {
-            title: "Πυρασφάλεια",
-            description: "Μελέτες και εγκατάσταση συστημάτων πυροπροστασίας.",
-            icon: <Shield className="h-5 w-5 text-blue-500 mb-2" />
-          },
-          {
-            title: "Ανελκυστήρες",
-            description: "Μελέτες και πιστοποιήσεις ανελκυστήρων.",
-            icon: <CableCar className="h-5 w-5 text-blue-500 mb-2" />
-          },
-          {
-            title: "Υδραυλικές Μελέτες",
-            description: "Σχεδιασμός υδραυλικών εγκαταστάσεων και αποχέτευσης.",
-            icon: <Droplet className="h-5 w-5 text-blue-500 mb-2" />
-          }
-        ]
+interface ProjectType {
+  icon: string;
+  title: string;
+  description: string;
+  services: ServiceItem[];
+}
+
+const projectTypes: ProjectType[] = [
+  {
+    icon: "/mechanical.png",
+    title: "Μηχανολόγοι Μηχανικοί",
+    description: "Εξειδικευμένοι επαγγελματίες για:",
+    services: [
+      {
+        title: "Μηχανολογικές Εγκαταστάσεις",
+        description: "Σχεδιασμός και μελέτες Η/Μ εγκαταστάσεων.",
+        icon: <Wrench className="h-5 w-5 text-blue-500 mb-2" />
+      },
+      {
+        title: "Συστήματα Κλιματισμού",
+        description: "Μελέτες θέρμανσης-ψύξης και εξαερισμού.",
+        icon: <Wind className="h-5 w-5 text-blue-500 mb-2" />
+      },
+      {
+        title: "Ενεργειακή Αναβάθμιση",
+        description: "Φωτοβολταϊκά συστήματα και εγκαταστάσεις φυσικού αρίου.",
+        icon: <Zap className="h-5 w-5 text-blue-500 mb-2" />
+      },
+      {
+        title: "Πυρασφάλεια",
+        description: "Μελέτες και εγκατάσταση συστημάτων πυροπροστασίας.",
+        icon: <Shield className="h-5 w-5 text-blue-500 mb-2" />
+      },
+      {
+        title: "Ανελκυστήρες",
+        description: "Μελέτες και πιστοποιήσεις ανελκυστήρων.",
+        icon: <CableCar className="h-5 w-5 text-blue-500 mb-2" />
+      },
+      {
+        title: "Υδραυλικές Μελέτες",
+        description: "Σχεδιασμός υδραυλικών εγκαταστάσεων και αποχέτευσης.",
+        icon: <Droplet className="h-5 w-5 text-blue-500 mb-2" />
       }
+    ]
+  }
 ];
 
 export default function Mechanics() {
